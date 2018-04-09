@@ -1,7 +1,7 @@
 # Linux-Utils
 Some useful utils for server maintenance
 
-#### link-data-disk: Auto mount data directories for each user. 自动将数据盘软链接到用户目录。【非常实用～】
+#### link-data-disk: Auto mount data directories for each user. 自动将数据盘软链接到用户目录。【非常实用】
 
 #### backup_home: Show disk usage in $HOME directory and then backup $HOME to a tar file.
 #### backup_os: Show disk usage in / directory and then backup / without home directories to a tar file.
