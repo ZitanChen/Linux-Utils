@@ -1,0 +1,33 @@
+
+"add the following 3 lines to filetype.vim
+"augroup filetypedetect
+    "au BufNewFile,BufRead *.asm setf masm
+"augroup END
+
+set wrap
+"set mouse=""
+"set rnu
+"set cursorcolumn
+set expandtab
+map <F9> :YcmCompleter FixIt<CR>
+nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>g :YcmCompleter GoTo<CR>
+"vi -u NORC when do not want to load .vimrc
+set cinoptions=g0
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set fileencoding=utf-8
+set termencoding=utf-8
+set encoding=utf-8
+
+set rtp+=/usr/local/opt/fzf
+
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
+
+if $VIM_CRONTAB == "true"
+    set nobackup
+    set nowritebackup
+endif

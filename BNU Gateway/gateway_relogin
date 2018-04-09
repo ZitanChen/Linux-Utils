@@ -1,0 +1,4 @@
+#!/bin/sh
+curl 'http://172.16.202.201:802/srun_portal_pc.php?ac_id=1&' -XPOST --data 'action=logout&ac_id=1&username=&password=' > /dev/null
+curl 'http://172.16.202.201:802/srun_portal_pc.php?ac_id=1&' -XPOST --data 'action=login&ac_id=1&username=&password=' > /dev/null 
+ping baidu.com

@@ -1,0 +1,3 @@
+#!/bin/sh
+sudo /usr/local/bin/istatserver -d
+cat /usr/local/etc/istatserver/istatserver.conf | grep -v '#' | grep server_code

@@ -1,0 +1,2 @@
+#!/bin/sh
+curl 'http://172.16.202.201:802/srun_portal_pc.php?ac_id=1&' -XPOST --data 'action=login&ac_id=1&username=&password='

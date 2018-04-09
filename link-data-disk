@@ -1,0 +1,49 @@
+# Auto mount data directories for each user.
+#
+# Detail:
+# Auto maintain directories for each user in data disk and link each user's directory `/disk/$USER`
+# and a sharing directory `/disk/share` in data disk to their home directory.
+#
+# Usage: 
+# Add this scirpt to /etc/zshrc or /etc/bash.bashrc
+#
+# Author: Zitan Chen(chenzitan@icloud.com)
+
+if [ $(id -u) -ne 0 ]
+then
+
+    if [ ! -d /data/$USER ]
+    then
+        echo ""
+        echo "Activating data disk..."
+        sudo mkdir /data/$USER
+
+        if [ -d /data/$USER ]
+        then
+            sudo chown $USER:$USER /data/$USER
+            chmod 750 /data/$USER
+        fi
+    fi
+
+    if [ ! -d /data/$USER ]
+    then
+        echo ""
+        echo "error: Shell initialization failed."
+        echo ""
+        exit -1
+    else
+        if [ ! -d $HOME/data ]
+        then
+            ln -s /data/$USER $HOME/data
+        fi
+
+        if [ ! -d $HOME/share ]
+        then
+            ln -s /data/share $HOME/share
+        fi
+    fi
+
+#else
+    #echo "incorrect user"
+    #echo "cannot run as root"
+fi

@@ -1,0 +1,11 @@
+#!/bin/sh
+PATH_OLD=$PATH
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+
+alias vncserver='vncserver -geometry 1600x1000 -geometry 2560x1600 -geometry 1024x768 -geometry 1080x800 -geometry 1920x1080 -geometry 1440x900'
+vncserver :7
+vncserver :8
+vncserver :9
+
+PATH=$PATH_OLD
+unset PATH_OLD

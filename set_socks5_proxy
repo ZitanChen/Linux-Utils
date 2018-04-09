@@ -1,0 +1,4 @@
+#!/bin/sh
+git config --global http.proxy 'socks5://127.0.0.1:1221'
+git config --global https.proxy 'socks5://127.0.0.1:1221'
+alias curl='curl --socks5 localhost:1221'

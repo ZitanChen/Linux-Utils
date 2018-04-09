@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+username = input('Username for BNU gateway:')
+password = input('Password for BNU gateway:')
+with open('./gateway_login', 'w+') as login_script:
+    print("#!/bin/sh\ncurl 'http://172.16.202.201:802/srun_portal_pc.php?ac_id=1&' -XPOST --data 'action=login&ac_id=1&username=" + username + "&password=" + password + "'", end='', file=login_script)
+
+
+with open('./gateway_logout', 'w+') as logout_script:
+    print("#!/bin/sh\ncurl 'http://172.16.202.201:802/srun_portal_pc.php?ac_id=1&' -XPOST --data 'action=logout&ac_id=1&username=" + username + "&password=" + password + "'", end='', file=logout_script)
+
+with open('./gateway_relogin', 'w+') as logout_script:
+    print("#!/bin/sh\ncurl 'http://172.16.202.201:802/srun_portal_pc.php?ac_id=1&' -XPOST --data 'action=logout&ac_id=1&username=" + username + "&password=" + password + "' > /dev/null\n" + "curl 'http://172.16.202.201:802/srun_portal_pc.php?ac_id=1&' -XPOST --data 'action=login&ac_id=1&username=" + username + "&password=" + password + "' > /dev/null \n" + "ping baidu.com", end='', file=logout_script)

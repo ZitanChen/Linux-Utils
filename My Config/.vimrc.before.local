@@ -1,0 +1,3 @@
+let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'python', 'javascript', 'html', 'misc',]
+"let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'javascript', 'html', 'misc',]
+"let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint']

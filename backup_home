@@ -1,0 +1,26 @@
+#!/bin/sh
+
+BACKUP_FILE=/home/chenzitan/data/backup/backup_`date +%Y%m%d`
+HOME_DIR=/home/chenzitan
+
+echo ""
+echo "Backup your home dir $HOME_DIR to $BACKUP_FILE"
+sleep 3
+
+echo "List files or directories: >1MB"
+du -sh $HOME_DIR/* | egrep -v '[[:digit:]]K\s|0'
+du -sh $HOME_DIR/.* | egrep -v '[[:digit:]]K\s|0'
+
+sleep 3
+
+set -v on
+tar -cvPzf $BACKUP_FILE.tgz \
+--exclude=$HOME_DIR/.cache \
+--exclude=$HOME_DIR/.gvfs \
+--exclude=$HOME_DIR/.gnupg \
+--exclude=$HOME_DIR/data \
+--exclude=$HOME_DIR/Downloads \
+--exclude=$HOME_DIR/Videos \
+$HOME_DIR \
+> $BACKUP_FILE.log \
+2> $BACKUP_FILE.error
