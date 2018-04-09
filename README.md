@@ -8,6 +8,5 @@ Some useful utils for server maintenance
 
 ---
 #### BNU Gateway: 北京师范大学 上网认证网关(Linux command-line version)
-  run `./gateway_configure`
-  then run `./gateway_relogin`
+  Usage: run `./gateway_configure`, then run `./gateway_relogin`
 
