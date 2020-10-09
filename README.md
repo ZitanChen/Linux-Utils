@@ -1,5 +1,4 @@
 # Linux-Utils
-Some useful utils for server maintenance
 
 #### link-data-disk: Auto mount data directories for each user.
 
@@ -9,6 +8,6 @@ Some useful utils for server maintenance
 #### set_socks5_proxy: Set Socks5 proxy for curl, git
 
 ---
-#### BNU Gateway: 北京师范大学 上网认证网关(Linux command-line version)
+#### BNU Gateway:
   Usage: run `./gateway_configure`, then run `./gateway_relogin`
 
